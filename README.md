@@ -14,10 +14,10 @@ Bienvenue sur ce test technique pour le poste de Backend / DevOps Engineer chez 
 
 ## Issues
 
-- **[Issue #1](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/1) :** [BUG] Démarrage Docker/Flask défaillant (diagnostic & correctifs minimaux)
-- **[Issue #2](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/2) :** [PERF] Réduire le temps de réponse de `/stats` (optimisation SQL)
-- **[Issue #3](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/3) :** [CI] Ajouter une intégration continue (build, tests, lint, image)
-- **[Issue #4](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/4) :** [QUESTION] Choisir un cloud provider et expliquer le déploiement & le scaling Kubernetes
+- **[Issue #1](https://github.com/Fincome/test-2025-10-back-end-devops-engineer/issues/1) :** [BUG] Démarrage Docker/Flask défaillant (diagnostic & correctifs minimaux)
+- **[Issue #2](https://github.com/Fincome/test-2025-10-back-end-devops-engineer/issues/2) :** [PERF] Réduire le temps de réponse de `/stats` (optimisation SQL)
+- **[Issue #3](https://github.com/Fincome/test-2025-10-back-end-devops-engineer/issues/3) :** [CI] Ajouter une intégration continue (build, tests, lint, image)
+- **[Issue #4](https://github.com/Fincome/test-2025-10-back-end-devops-engineer/issues/4) :** [QUESTION] Choisir un cloud provider et expliquer le déploiement & le scaling Kubernetes
 
 # Fincome Project
 
