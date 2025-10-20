@@ -5,12 +5,23 @@ Bienvenue sur ce test technique pour le poste de Backend / DevOps Engineer chez 
 
 ## Instructions
 - Forkez le repo
-- Repondez aux différentes issues
+- Repondez aux différentes issues ci-dessous en modifiant directement ce document
 - N'hésitez pas à prendre des initiatives et à montrer toutes les bonnes pratiques que vous maitrisez
 - L'historique des commits/PRs et la qualité de la documentation (y compris ce document) comptent dans l'évaluation
 - Quand vous avez terminé, invitez lucas@fincome.co sur votre fork
 
 ---
+
+## Issues
+
+### **[Issue #1](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/1) :** [BUG] Démarrage Docker/Flask défaillant (diagnostic & correctifs minimaux)
+...
+### **[Issue #2](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/2) :** [PERF] Réduire le temps de réponse de `/stats` (optimisation SQL)
+...
+### **[Issue #3](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/3) :** [CI] Ajouter une intégration continue (build, tests, lint, image)
+...
+### **[Issue #4](https://github.com/coton-d3v/20251019-fincome-software-back-end-devops-pierrick-haumesser/issues/4) :** [QUESTION] Choisir un cloud provider et expliquer le déploiement & le scaling Kubernetes
+...
 
 # Fincome Project
 
