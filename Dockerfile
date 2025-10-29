@@ -15,6 +15,3 @@ RUN apt-get update && pip install -r requirements.txt
 ENV FLASK_ENV=production
 
 ENV PYTHONPATH=.
-
-# Commande pour démarrer l'application
-CMD ["flask", "run", "--host=0.0.0.0"]

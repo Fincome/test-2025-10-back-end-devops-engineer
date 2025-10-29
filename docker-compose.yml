@@ -6,8 +6,11 @@ services:
     image: fincome-url-shortener
     ports:
       - "5000:5000"
+    command: [ "flask", "run", "--host=${FLASK_HOST}" ]
     depends_on:
       - fincome-db
+    env_file:
+      - .env
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_USER: postgres
