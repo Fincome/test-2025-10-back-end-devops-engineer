@@ -17,15 +17,17 @@ services:
       POSTGRES_PASSWORD: password
 
   fincome-db:
-    image: postgres
+    image: postgres:${POSTGRES_VERSION}
     ports:
       - "5432:5432"
+    env_file:
+      - .env
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/${POSTGRES_VERSION}/docker
 
 volumes:
   pg_data: {}
