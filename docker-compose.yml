@@ -8,12 +8,11 @@ services:
       - "5000:5000"
     command: [ "flask", "run", "--host=${FLASK_HOST}" ]
     depends_on:
-      - fincome-db
+      fincome-db:
+        condition: service_healthy
     env_file:
       - .env
     environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
 
   fincome-db:
@@ -23,9 +22,13 @@ services:
     env_file:
       - .env
     environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+    healthcheck:
+      interval: 20s
+      retries: 5
+      start_period: 3s
+      test: [ "CMD-SHELL", "pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}" ]
+      timeout: 5s
     volumes:
       - pg_data:/var/lib/postgresql/${POSTGRES_VERSION}/docker
 
