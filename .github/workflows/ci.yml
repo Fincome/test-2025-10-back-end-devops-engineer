@@ -1,0 +1,51 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build-test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build and run Docker Compose services
+      run: docker-compose up -d
+
+    - name: Wait for database to be ready
+      # This step is crucial to ensure the database is fully up and accepting connections
+      # before the tests try to connect.
+      run: |
+        docker-compose ps
+        docker-compose logs fincome-db
+        for i in $(seq 1 10); do
+          docker-compose exec fincome-db pg_isready -h localhost -p 5432 -U postgres && break
+          echo "Waiting for database... ($i/10)"
+          sleep 5
+        done
+
+    - name: Run tests inside Docker container
+      run: |
+        docker-compose exec -e DOCKER_CONTAINER=true fincome-url-shortener-flask pytest tests/
+
+    - name: Run lint
+      run: docker-compose exec fincome-url-shortener-flask flake8 src/
+
+  build-docker-image:
+    needs: build-test-lint
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: docker build -t fincom .
